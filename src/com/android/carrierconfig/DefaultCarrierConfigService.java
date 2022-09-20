@@ -178,7 +178,7 @@ public class DefaultCarrierConfigService extends CarrierService {
         }
 
         // Treat vendor.xml as if it were appended to the carrier config file we read.
-        XmlPullParser vendorInput = getApplicationContext().getResources().getXml(R.xml.vendor);
+        XmlPullParser vendorInput = getApplicationContext().getResources().getXml(R.xml.vendor2);
         try {
             PersistableBundle vendorConfig = readConfigFromXml(vendorInput, id, sku);
             config.putAll(vendorConfig);
