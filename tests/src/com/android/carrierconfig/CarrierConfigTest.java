@@ -190,6 +190,8 @@ public class CarrierConfigTest extends InstrumentationTestCase {
                             case "long":
                             case "boolean":
                             case "string":
+                            case "double":
+                            case "pbundle_as_map":
                                 // NOTE: This doesn't check for other valid Bundle values, but it
                                 // is limited to the key types in CarrierConfigManager.
                                 final String varName = parser.getAttributeValue(null, "name");
