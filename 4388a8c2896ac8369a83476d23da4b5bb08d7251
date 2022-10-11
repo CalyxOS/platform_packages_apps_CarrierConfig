@@ -16,6 +16,29 @@
       "message": "This would\u0027ve helped us so this is ok for a start I guess.",
       "revId": "4388a8c2896ac8369a83476d23da4b5bb08d7251",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f7816f26_40b40a66",
+        "filename": "tests/src/com/android/carrierconfig/CarrierConfigTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2022-10-11T17:34:11Z",
+      "side": 1,
+      "message": "This fails for nested pbundle_as_map",
+      "range": {
+        "startLine": 200,
+        "startChar": 0,
+        "endLine": 202,
+        "endChar": 71
+      },
+      "revId": "4388a8c2896ac8369a83476d23da4b5bb08d7251",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
