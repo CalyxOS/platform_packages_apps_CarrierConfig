@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "abf18032_1dce097c",
+        "filename": "tests/src/com/android/carrierconfig/CarrierConfigTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-10-11T17:30:35Z",
+      "side": 1,
+      "message": "This would\u0027ve helped us so this is ok for a start I guess.",
+      "revId": "4388a8c2896ac8369a83476d23da4b5bb08d7251",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
