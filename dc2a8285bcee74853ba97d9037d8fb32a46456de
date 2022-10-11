@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fd5bf1fd_8fbe5f10",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-10-11T16:28:55Z",
+      "side": 1,
+      "message": "```\njava.lang.AssertionError: Problem in carrier_config_mccmnc_20820.xml: unexpected carrier_config_mccmnc.xml with matching carrier id: 1487, please move to carrier_config_carrierid.xml\n\nCaused by: junit.framework.AssertionFailedError: unexpected carrier_config_mccmnc.xml with matching carrier id: 1487, please move to carrier_config_carrierid.xml\n```",
+      "revId": "dc2a8285bcee74853ba97d9037d8fb32a46456de",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
