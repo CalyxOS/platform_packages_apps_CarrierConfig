@@ -114,6 +114,9 @@ public class DefaultCarrierConfigService extends CarrierService {
 
     PersistableBundle getNoSimConfig(XmlPullParser parser, String sku) {
         PersistableBundle config = new PersistableBundle();
+        // Whether a vendor entry should entirely replace the entry from our assets folder.
+        boolean standaloneVendorEntries = getApplicationContext().getResources().getBoolean(
+                R.bool.standalone_vendor_entries);
         try (InputStream inputStream = openAsset(NO_SIM_CONFIG_FILE_NAME)) {
             // Load no SIM config if carrier id is not set.
             parser.setInput(inputStream, "utf-8");
@@ -123,7 +126,11 @@ public class DefaultCarrierConfigService extends CarrierService {
             XmlPullParser vendorInput =
                     getApplicationContext().getResources().getXml(R.xml.vendor_no_sim);
             PersistableBundle vendorConfig = readConfigFromXml(vendorInput, null, sku);
-            config.putAll(vendorConfig);
+            if (standaloneVendorEntries && !vendorConfig.isEmpty()) {
+                config = vendorConfig;
+            } else {
+                config.putAll(vendorConfig);
+            }
         } catch (IOException | XmlPullParserException e) {
             Log.e(TAG, "Failed to load config for no SIM", e);
         }
@@ -212,6 +219,9 @@ public class DefaultCarrierConfigService extends CarrierService {
     PersistableBundle loadConfig(XmlPullParser parser, @Nullable CarrierIdentifier id) {
         // OEM customizable filter for carrier requirements not related to hardware/vendor SKU.
         String sku = getApplicationContext().getResources().getString(R.string.sku_filter);
+        // Whether a vendor entry should entirely replace the entry from our assets folder.
+        boolean standaloneVendorEntries = getApplicationContext().getResources().getBoolean(
+                R.bool.standalone_vendor_entries);
 
         if (id == null) {
             return getNoSimConfig(parser, sku);
@@ -236,7 +246,11 @@ public class DefaultCarrierConfigService extends CarrierService {
         XmlPullParser vendorInput = getApplicationContext().getResources().getXml(R.xml.vendor);
         try {
             PersistableBundle vendorConfig = readConfigFromXml(vendorInput, id, sku);
-            config.putAll(vendorConfig);
+            if (standaloneVendorEntries && !vendorConfig.isEmpty()) {
+                config = vendorConfig;
+            } else {
+                config.putAll(vendorConfig);
+            }
         }
         catch (IOException | XmlPullParserException e) {
             Log.e(TAG, e.toString());
