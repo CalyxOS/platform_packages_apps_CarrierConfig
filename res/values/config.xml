@@ -18,4 +18,11 @@
 <resources>
     <!-- Setting for SKU filter to be customizable. -->
     <string name="sku_filter" translatable="false"></string>
+
+    <!-- Flag indicating whether vendor-supplied carrier_config entries should be treated as
+         standalone, meaning that if our assets folder contains a carrier_config for the entry
+         already, it will be disregarded in favor of the vendor's. When false, attributes from
+         vendor-supplied carrier_config entries are merged with ours, preserving attributes that
+         are not specified by the vendor configuration. -->
+    <bool name="standalone_vendor_entries">false</bool>
 </resources>
